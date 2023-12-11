@@ -8,7 +8,7 @@ data class Transaction(val id: UUID,
                        val sellingOrder: Order,
                        val share: Int,
                        val price: Double,
-                       val total : Double,
+                       var total : Double,
                        val dateTime: LocalDateTime) {
     companion object {
 

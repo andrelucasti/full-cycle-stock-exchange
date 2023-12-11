@@ -20,7 +20,7 @@ data class Investor(val id: UUID,
     fun updateAssetShare(assetId: UUID, share: Int) {
         val assetPosition = investorAssetPosition.find { it.assetId == assetId }
         assetPosition?.let {
-            val updatedAssetPosition = it.copy(share = share)
+            val updatedAssetPosition = it.copy(share = share + it.share)
             investorAssetPosition = investorAssetPosition.minus(it).plus(updatedAssetPosition)
         } ?: addAsset(assetId, share)
     }

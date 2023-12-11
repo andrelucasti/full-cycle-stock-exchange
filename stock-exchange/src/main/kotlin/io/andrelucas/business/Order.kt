@@ -6,9 +6,9 @@ data class Order(val id: UUID,
                  val investor: Investor,
                  val asset: Asset,
                  val share: Int,
-                 val pendingShare: Int,
+                 var pendingShare: Int,
                  val price: Double,
-                 val status: OrderStatus,
+                 var status: OrderStatus,
                  val orderType: OrderType,
                  var transactions: List<Transaction>) {
 
